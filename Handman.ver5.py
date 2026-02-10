@@ -183,7 +183,7 @@ while wrong_guesses < max_attempts and '_' in correctly_guessed:
                 correctly_guessed[i] = guess
     else:
         print(f"Sorry, '{guess}' is not in the word.")
-        incorrect_guesses += 1
+        wrong_guesses += 1
         print(f"Incorrect guesses remaining: {max_attempts - wrong_guesses}")
     
     print("-" * 50)
