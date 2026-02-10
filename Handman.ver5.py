@@ -163,7 +163,7 @@ while wrong_guesses < max_attempts and '_' in correctly_guessed:
             print("Please enter only one letter!")
             continue
         if not guess.isalpha():
-            print("Please enter a valid letter (A-Z)!")
+            print("Please enter a valid letter!")
             continue
         if guess in letters:
             print(f"You've already guessed '{guess}'! Try a different letter.")
