@@ -1,13 +1,14 @@
 import random
 
-#import files into the game
+# Import files into the game
 with open('Wordlist.txt', 'r') as file:
     wordlist = [line.strip() for line in file]
     
-#asking player's details
+# Asking player's details
 name = input("What is your name? ")
 print("Hello,", name, "nice to meet you! Welcome to Hangman!!!!!!!!!!")
 
+# Game Rules
 print("\n" + "="*50)
 print("Here are the game rules:")
 print("1. There will be 10 guesses")
@@ -20,15 +21,17 @@ print("="*50)
 secret_word = random.choice(wordlist).upper()
 word_length = len(secret_word)
 
-
 # Guesses
 guessed_letters = []
 incorrect_guesses = 0
 max_attempts = 10
 correctly_guessed = ['_'] * word_length
 
+print(f"\nAlright {name}, I've chosen a word!")
+print(f"The word has {word_length} letters.")
 
-# Hangman stages (visual representation)
+
+# Hangman stages (drawing the handman)
 hangman_stages = [
     """
        ------
@@ -90,7 +93,7 @@ hangman_stages = [
        ------
        |    |
        O    |
-      /|\\   |
+      /|\   |
             |
             |
     ==========
@@ -99,7 +102,7 @@ hangman_stages = [
        ------
        |    |
        O    |
-      /|\\   |
+      /|\   |
       /     |
             |
     ==========
@@ -108,8 +111,8 @@ hangman_stages = [
        ------
        |    |
        O    |
-      /|\\   |
-      / \\   |
+      /|\   |
+      / \   |
             |
     ==========
     """
