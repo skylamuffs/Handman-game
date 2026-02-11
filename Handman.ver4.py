@@ -40,20 +40,23 @@ print("="*50)
 
 # Select a random word from the wordlist
 secret_word = random.choice(wordlist).upper()
-word_length = len(secret_word)
+length = len(secret_word)
 
 # Guesses
-guessed_letters = []
-incorrect_guesses = 0
+letters = []
+wrong_guesses = 0
 max_attempts = 10
-correctly_guessed = ['_'] * word_length
+correctly_guessed = ['_'] * length
 
 print(f"\nAlright {name}, I've chosen a word!")
-print(f"The word has {word_length} letters.")
+print(f"The word has {length} letters.")
 
 
 # Hangman stages (drawing the handman)
 hangman_stages = [
+   r"""
+
+   """,
     r"""
        ------
     """,
@@ -140,16 +143,16 @@ hangman_stages = [
 ]
 
 # Main game loop
-while incorrect_guesses < max_attempts and '_' in correctly_guessed:
+while wrong_guesses < max_attempts and '_' in correctly_guessed:
     # Display current hangman stage
-    print(hangman_stages[incorrect_guesses])
+    print(hangman_stages[wrong_guesses])
     
     # Display current word progress
     print("Word:", " ".join(correctly_guessed))
     
     # Show guessed letters
-    if guessed_letters:
-        print(f"Guessed letters: {', '.join(sorted(guessed_letters))}")
+    if letters:
+        print(f"Guessed letters: {', '.join(sorted(letters))}")
     
     # Get player's guess
     while True:
@@ -160,28 +163,28 @@ while incorrect_guesses < max_attempts and '_' in correctly_guessed:
             print("Please enter only one letter!")
             continue
         if not guess.isalpha():
-            print("Please enter a valid letter (A-Z)!")
+            print("Please enter a valid letter!")
             continue
-        if guess in guessed_letters:
+        if guess in letters:
             print(f"You've already guessed '{guess}'! Try a different letter.")
             continue
         break
     
     # Add to guessed letters
-    guessed_letters.append(guess)
+    letters.append(guess)
     
     # Check if the letter is in the secret word
     if guess in secret_word:
         print(f"Good guess! '{guess}' is in the word!")
         
         # Update the correctly guessed letters
-        for i in range(word_length):
+        for i in range(length):
             if secret_word[i] == guess:
                 correctly_guessed[i] = guess
     else:
         print(f"Sorry, '{guess}' is not in the word.")
-        incorrect_guesses += 1
-        print(f"Incorrect guesses remaining: {max_attempts - incorrect_guesses}")
+        wrong_guesses += 1
+        print(f"Incorrect guesses remaining: {max_attempts - wrong_guesses}")
     
     print("-" * 50)
 
