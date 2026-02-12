@@ -186,8 +186,7 @@ def play_game(name):
         print(f"With {wrong_guesses} wrong guesses and {max_attempts - wrong_guesses} guesses remaining!")
     else:
         # Player lost
-        print(f"SORRY {name}, YOU LOST! ")
-        print(f"The word was: {secret_word}")
+        print(f"Sorry {name}, the word was: {secret_word}")
         print(f"You guessed: {' '.join(correctly_guessed)}")
         print("Better luck next time!")
 
@@ -229,5 +228,5 @@ while play_more:
         print("=" * 60)
 
 print("\n" + "=" * 60)
-print(f"THANKS FOR PLAYING HANGMAN, {name.upper()}! GOODBYE!")
+print(f"THANKS FOR PLAYING HANGMAN, {name.upper()}! BYEBYE!")
 print("=" * 60)
