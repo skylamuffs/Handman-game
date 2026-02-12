@@ -200,7 +200,7 @@ print("=" * 60)
 name = get_player_name()
 print(f"\nHello, {name}, nice to meet you! Welcome to Hangman!!!!!!!!!!")
 
-# Game Rules (show only once)
+# Game Rules 
 print("\n" + "="*50)
 print("Here are the game rules:")
 print("1. There will be 10 guesses")
