@@ -228,5 +228,5 @@ while play_more:
         print("=" * 60)
 
 print("\n" + "=" * 60)
-print(f"THANKS FOR PLAYING HANGMAN, {name.upper()}! BYEBYE!")
+print(f"\nThanks for playing Hangman, {name}! bye for now!! ")
 print("=" * 60)
